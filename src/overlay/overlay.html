@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlay</title>
+    <script defer type="module" src="./overlay.ts"></script>
+</head>
+
+<body>
+    <div id="widget">
+        <svg id="widget-loader" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" stroke-width="12" stroke="#ffffff"
+                stroke-dasharray="62.83185307179586 62.83185307179586" fill="none" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite"
+                    keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+            </circle>
+            <circle cx="50" cy="50" r="27" stroke-width="12" stroke="#ffffff"
+                stroke-dasharray="42.411500823462205 42.411500823462205" stroke-dashoffset="42.411500823462205"
+                fill="none" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite"
+                    keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+            </circle>
+        </svg>
+        <svg id="widget-error" class="hidden" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <path
+                d="M2.725 21q-.575 0-.85-.5t0-1l9.25-16Q11.4 3 12 3t.875.5l9.25 16q.275.5 0 1t-.85.5ZM12 10q-.425 0-.712.287Q11 10.575 11 11v3q0 .425.288.712.287.288.712.288t.713-.288Q13 14.425 13 14v-3q0-.425-.287-.713Q12.425 10 12 10Zm0 8q.425 0 .713-.288Q13 17.425 13 17t-.287-.712Q12.425 16 12 16t-.712.288Q11 16.575 11 17t.288.712Q11.575 18 12 18Z" />
+        </svg>
+        <div id="widget-content" class="hidden">
+            <div id="timer" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                    <path
+                        d="M9 3V1h6v2Zm2 11h2V8h-2Zm1 8q-1.85 0-3.488-.712-1.637-.713-2.862-1.938t-1.938-2.862Q3 14.85 3 13t.712-3.488Q4.425 7.875 5.65 6.65t2.862-1.937Q10.15 4 12 4q1.55 0 2.975.5t2.675 1.45l1.4-1.4 1.4 1.4-1.4 1.4Q20 8.6 20.5 10.025 21 11.45 21 13q0 1.85-.712 3.488-.713 1.637-1.938 2.862t-2.862 1.938Q13.85 22 12 22Zm0-2q2.9 0 4.95-2.05Q19 15.9 19 13q0-2.9-2.05-4.95Q14.9 6 12 6 9.1 6 7.05 8.05 5 10.1 5 13q0 2.9 2.05 4.95Q9.1 20 12 20Zm0-7Z" />
+                </svg><span id="time"></span><span id="ms" class="grey"></span></div>
+            <div id="counter"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                    <path
+                        d="M9 16.5q-1.05 0-1.775-.725Q6.5 15.05 6.5 14q0-1.05.725-1.775Q7.95 11.5 9 11.5q1.05 0 1.775.725.725.725.725 1.775 0 1.05-.725 1.775Q10.05 16.5 9 16.5ZM5 22q-.825 0-1.413-.587Q3 20.825 3 20V6q0-.825.587-1.412Q4.175 4 5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588Q21 5.175 21 6v14q0 .825-.587 1.413Q19.825 22 19 22Zm0-2h14V10H5v10ZM5 8h14V6H5Zm0 0V6v2Z" />
+                </svg><span id="daily">0</span><span> today</span></div>
+            <div id="spotify-track" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                    <path d="M12 3a9 9 0 1 0 0 18A9 9 0 0 0 12 3zm4.13 12.96c-.18.28-.55.37-.83.19-2.26-1.38-5.11-1.69-8.47-.93-.32.07-.64-.13-.71-.46a.6.6 0 0 1 .46-.71c3.67-.84 6.82-.48 9.36 1.08.28.18.37.55.19.83zm1.1-2.45c-.22.35-.69.46-1.04.24-2.59-1.59-6.53-2.05-9.59-1.12a.75.75 0 0 1-.44-1.43c3.49-1.06 7.83-.55 10.83 1.27.35.22.46.69.24 1.04zm.09-2.55C14.1 9.2 8.74 9.03 5.83 9.9a.9.9 0 0 1-.53-1.72c3.34-.97 8.87-.78 12.37 1.3a.9.9 0 0 1-.35 1.48z"/>
+                </svg><span id="spotify-title"></span><span id="spotify-artist" class="grey"></span></div>
+        </div>
+    </div>
+    <div id="popup-panel"></div>
+</body>
+
+</html>
